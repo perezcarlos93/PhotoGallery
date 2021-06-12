@@ -1,0 +1,13 @@
+footer {
+	display: flex;
+	justify-content: center;
+	background-image: url('../../public/Assets/mountains.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: auto;
+	height: auto;
+}
+.footLinks {
+	margin-top: 22%;
+	margin-bottom: 1rem;
+}

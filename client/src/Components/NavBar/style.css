@@ -1,0 +1,35 @@
+/* Main Navbar present on all pages */
+.customNav {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+#navDiv {
+	background: rgb(9, 0, 163);
+	background: linear-gradient(
+		180deg,
+		rgba(9, 0, 163, 1) 16%,
+		rgba(112, 138, 255, 1) 64%,
+		rgba(255, 255, 255, 1) 100%
+	);
+	padding-bottom: 2rem;
+}
+
+/* Custom Navbar logo */
+.logo {
+	min-width: 10%;
+	min-height: 10%;
+	padding-top: 1.8rem;
+	color: white;
+}
+.logoImg {
+	padding-top: 1.5rem;
+	width: 6rem;
+	margin-left: 2.5rem;
+	color: white;
+}
+#bootstrapNav {
+	padding-top: 2.5rem;
+	padding-right: 5.5rem;
+	font-size: 1.5rem;
+}
