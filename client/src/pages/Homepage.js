@@ -6,7 +6,7 @@ const Homepage = () => {
 	useEffect(() => {
 		M.AutoInit();
 	});
-	return <Card />;
+	return <div>hello world</div>;
 };
 
 export default Homepage;

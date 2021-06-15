@@ -17,14 +17,18 @@
 
 /* Custom Navbar logo */
 .logo {
-	min-width: 10%;
-	min-height: 10%;
+	min-width: 5%;
+	min-height: 5%;
 	padding-top: 1.8rem;
 	color: white;
 }
 .logoImg {
-	padding-top: 1.5rem;
-	width: 6rem;
-	margin-left: 2.5rem;
-	color: white;
+	display: block;
+	width: 60px;
+	padding: 0.2rem;
+	margin-left: 1rem;
 }
+/* .nav-wrapper {
+	padding-bottom: 6rem;
+	margin-bottom: auto;
+} */
