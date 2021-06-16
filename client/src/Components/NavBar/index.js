@@ -71,12 +71,12 @@ const NavBar = () => {
 	pagination();
 
 	return (
-		<div>
-			<nav>
-				<div class="nav-wrapper white">
+		<div class="navbar-fixed blend">
+			<nav className="transparent z-depth-0">
+				<div class="nav-wrapper nav">
 					<a className="brand-logo logo" href="/">
 						<img
-							className="responsive-img logoImg absolute"
+							className="responsive-img logoImg absolute blend"
 							src={logo}
 							alt="Cp"
 						></img>
@@ -85,18 +85,18 @@ const NavBar = () => {
 						<i class="material-icons black-text">menu</i>
 					</a>
 					<ul class="right hide-on-med-and-down">
-						<li className="link">
-							<a className="black-text" href="/aboutme">
+						<li className="link blend">
+							<a className="white-text blend" href="/aboutme">
 								About Me
 							</a>
 						</li>
 						<li className="link">
-							<a className="black-text" href="/galleries">
+							<a className="white-text blend" href="/galleries">
 								Galleries
 							</a>
 						</li>
 						<li className="link">
-							<a className="black-text" href="/contactme">
+							<a className="white-text blend" href="/contactme">
 								Contact Me
 							</a>
 						</li>

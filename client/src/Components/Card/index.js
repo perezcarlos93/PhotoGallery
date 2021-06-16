@@ -11,7 +11,10 @@ const Card = () => {
 			<div class="col s12 m7">
 				<div class="card">
 					<div class="card-image">
-						<img src="https://s.hdnux.com/photos/01/11/47/50/19298838/3/rawImage.jpg"></img>
+						<img
+							src="https://s.hdnux.com/photos/01/11/47/50/19298838/3/rawImage.jpg"
+							alt="n/a"
+						></img>
 						<span class="card-title">Card Title</span>
 					</div>
 					<div class="card-content">
@@ -22,7 +25,7 @@ const Card = () => {
 						</p>
 					</div>
 					<div class="card-action">
-						<a href="#">This is a link</a>
+						<a href="/">This is a link</a>
 					</div>
 				</div>
 			</div>

@@ -1,34 +1,20 @@
 /* Main Navbar present on all pages */
-.customNav {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-}
-#navDiv {
-	background: rgb(9, 0, 163);
-	background: linear-gradient(
-		180deg,
-		rgba(9, 0, 163, 1) 16%,
-		rgba(112, 138, 255, 1) 64%,
-		rgba(255, 255, 255, 1) 100%
-	);
-	padding-bottom: 2rem;
-}
-
 /* Custom Navbar logo */
 .logo {
 	min-width: 5%;
 	min-height: 5%;
 	padding-top: 1.8rem;
-	color: white;
 }
 .logoImg {
-	display: block;
+	display: inline;
 	width: 60px;
 	padding: 0.2rem;
 	margin-left: 1rem;
+	z-index: 3;
 }
-/* .nav-wrapper {
-	padding-bottom: 6rem;
-	margin-bottom: auto;
-} */
+.nav {
+	background-color: rgba(0, 0, 0, 0);
+}
+.blend {
+	mix-blend-mode: difference;
+}
