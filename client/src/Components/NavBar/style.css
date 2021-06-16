@@ -10,11 +10,14 @@
 	width: 60px;
 	padding: 0.2rem;
 	margin-left: 1rem;
-	z-index: 3;
+	/* z-index: 3; */
 }
 .nav {
 	background-color: rgba(0, 0, 0, 0);
-}
-.blend {
 	mix-blend-mode: difference;
+	z-index: 1;
+}
+.sidenav {
+	mix-blend-mode: unset;
+	z-index: 4;
 }

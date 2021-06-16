@@ -5,11 +5,8 @@ import './style.css';
 
 const NavBar = () => {
 	useEffect(() => {
-		M.AutoInit();
-		// document.addEventListener('DOMContentLoaded', function () {
-		// 	var elems = document.querySelectorAll('.sidenav');
-		// 	var instances = M.Sidenav.init(elems);
-		// });
+		var elems = document.querySelectorAll('.sidenav');
+		M.Sidenav.init(elems);
 	});
 
 	var anchorOne = '';
@@ -71,7 +68,7 @@ const NavBar = () => {
 	pagination();
 
 	return (
-		<div class="navbar-fixed blend">
+		<div class="navbar-fixed nav">
 			<nav className="transparent z-depth-0">
 				<div class="nav-wrapper nav">
 					<a className="brand-logo logo" href="/">

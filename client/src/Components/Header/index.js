@@ -2,53 +2,49 @@ import React, { useEffect, useState } from 'react';
 import './style.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
 import fire from '../../public/Assets/gallery/fire.png';
+import stars from '../../public/Assets/gallery/stars.JPG';
+import mountains from '../../public/Assets/gallery/mountians.jpg';
+import smoke from '../../public/Assets/gallery/smoke.jpg';
 
 const Header = () => {
 	const options = {
 		inDuration: 1000,
-		onOpenEnd: () => {
-			setPopImg('materialboxed sqrImg');
-		},
-		onCloseEnd: () => {
-			setPopImg('materialboxed origImg');
-		},
 	};
+
 	useEffect(() => {
-		document.addEventListener('DOMContentLoaded', function () {
-			var elems = document.querySelectorAll('.materialboxed');
-			var instance = M.Materialbox.init(elems, options);
-		});
+		var materialbox = document.querySelectorAll('.materialboxed');
+		M.Materialbox.init(materialbox, options);
 	});
 
 	const [popImg, setPopImg] = useState('materialboxed sqrImg');
 
 	return (
 		<div className="relative">
-			<div className="header-black">
+			<section className="header-black">
 				<div className="row">
-					<h1 className="h1">
+					<h1 className="h1 fixed">
 						Carlos <br></br> Perez <br></br> Photo<br></br>Graphy
 					</h1>
 					<div className="col s6 offset-s6 absolute imgCenter">
 						<img class={popImg} src={fire} alt="fire"></img>
 					</div>
 				</div>
-			</div>
-			<div className="header-white row">
+			</section>
+			<section className="header-white row">
 				<div className="col s6 offset-s6 absolute imgCenter">
-					<img class={popImg} src={fire} alt="fire"></img>
+					<img class={popImg} src={mountains} alt="fire"></img>
 				</div>
-			</div>
-			<div className="header-black row">
+			</section>
+			<section className="header-black row">
 				<div className="col s6 offset-s6 absolute imgCenter">
-					<img class={popImg} src={fire} alt="fire"></img>
+					<img class={popImg} src={smoke} alt="fire"></img>
 				</div>
-			</div>
-			<div className="header-white row">
+			</section>
+			<section className="header-white row">
 				<div className="col s6 offset-s6">
 					<h1>Thank you For visiting</h1>
 				</div>
-			</div>
+			</section>
 		</div>
 	);
 };

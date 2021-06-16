@@ -2,9 +2,7 @@ import React, { useEffect } from 'react';
 import M from 'materialize-css';
 
 const Card = () => {
-	useEffect(() => {
-		M.AutoInit();
-	});
+	useEffect(() => {});
 
 	return (
 		<div class="row">

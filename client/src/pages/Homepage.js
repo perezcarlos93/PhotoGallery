@@ -5,7 +5,7 @@ import M from 'materialize-css/dist/js/materialize.min.js';
 
 const Homepage = () => {
 	useEffect(() => {
-		M.AutoInit();
+		// M.AutoInit();
 	});
 	return (
 		<div>
