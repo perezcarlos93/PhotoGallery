@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import M from 'materialize-css/dist/js/materialize.min.js';
 import './style.css';
 
@@ -14,6 +14,8 @@ const FrontPage = () => {
 		var materialbox = document.querySelectorAll('.materialboxed');
 		M.Materialbox.init(materialbox);
 	});
+
+	const fadeItem = useRef();
 
 	const [popImg, setPopImg] = useState('materialboxed sqrImg');
 
@@ -40,7 +42,13 @@ const FrontPage = () => {
 				</section>
 				<section className="row">
 					<div className="col s6 offset-s6">
-						<h1>Thank you For visiting</h1>
+						<h1 ref={fadeItem} className="fadeIn fadeIn-head">
+							<b>Thank you For visiting</b>
+						</h1>
+						<p ref={fadeItem} className="fadeIn fadeIn-body">
+							Here you will find the culmination of my love for photography, for
+							beauty, and for design, with my talent and passion as a developer.
+						</p>
 					</div>
 				</section>
 			</div>
