@@ -1,15 +1,13 @@
 import React, { useEffect } from 'react';
-import Card from '../Components/Card';
-import Header from '../Components/Header';
+import NavBar from '../Components/NavBar';
+import FrontPage from '../Components/FrontPage';
 import M from 'materialize-css/dist/js/materialize.min.js';
 
 const Homepage = () => {
-	useEffect(() => {
-		// M.AutoInit();
-	});
 	return (
 		<div>
-			<Header />
+			{/* <NavBar /> */}
+			<FrontPage />
 			<br></br>
 			<br></br>
 		</div>

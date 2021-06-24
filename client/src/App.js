@@ -13,7 +13,6 @@ function App() {
 			<Router>
 				<Route exact path="/" component={Homepage} />
 			</Router>
-			<Footer />
 		</div>
 	);
 }

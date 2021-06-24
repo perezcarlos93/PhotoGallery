@@ -1,16 +1,36 @@
 body {
-	overflow-y: scroll;
-	scroll-snap-type: y mandatory;
+	margin: 0;
+	cursor: cell;
 }
+
+/* .logo {
+	min-width: 5%;
+	min-height: 5%;
+	padding-top: 1.8rem;
+}
+.logoImg {
+	display: inline;
+	width: 60px;
+	padding: 0.2rem;
+	margin-left: 1rem;
+}
+.nav {
+	background-color: rgba(0, 0, 0, 0);
+	mix-blend-mode: difference;
+	z-index: 1;
+}
+.sidenav {
+	mix-blend-mode: unset;
+	z-index: 4;
+} */
 
 section {
 	background-color: white;
 	position: relative;
-	height: 100vh;
+	height: 101vh;
+	max-height: 101vh;
 	bottom: 4.5rem;
 	width: 100%;
-
-	scroll-snap-align: start;
 }
 
 section:nth-child(odd) {
@@ -34,6 +54,10 @@ section:nth-child(odd) {
 
 .imgCenter {
 	top: 10vw;
+}
+
+img:hover {
+	cursor: none;
 }
 
 .sqrImg {

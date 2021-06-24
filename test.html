@@ -24,6 +24,7 @@
 			.container {
 				max-height: 100vh;
 				overflow: scroll;
+				scroll-snap-type: y mandatory;
 			}
 
 			.item {
@@ -35,6 +36,8 @@
 				align-items: center;
 				height: 100vh;
 				font-size: 6vw;
+
+				scroll-snap-align: start;
 			}
 
 			.item:nth-child(odd) {
