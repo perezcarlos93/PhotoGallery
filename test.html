@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="item">Hello World</div>
+			<div class="item">Hola Mundo</div>
+			<div class="item">Hallo Welt</div>
+			<div class="item">Bonjour le monde</div>
+			<div class="item">Ciao mondo</div>
+		</div>
+
+		<style>
+			body {
+				font-family: Arial, Helvetica, sans-serif;
+				margin: 0;
+			}
+
+			.container {
+				max-height: 100vh;
+				overflow: scroll;
+			}
+
+			.item {
+				border-bottom: 10px solid white;
+				color: white;
+				background-color: #f107ba;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				font-size: 6vw;
+			}
+
+			.item:nth-child(odd) {
+				background-color: #2b2b2b;
+			}
+		</style>
+	</body>
+</html>

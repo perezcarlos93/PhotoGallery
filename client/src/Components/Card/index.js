@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import M from 'materialize-css';
+// import M from 'materialize-css';
 
 const Card = () => {
 	useEffect(() => {});

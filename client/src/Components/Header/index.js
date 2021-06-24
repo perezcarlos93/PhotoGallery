@@ -20,27 +20,25 @@ const Header = () => {
 
 	return (
 		<div className="relative">
-			<section className="header-black">
-				<div className="row">
-					<h1 className="h1 fixed">
-						Carlos <br></br> Perez <br></br> Photo<br></br>Graphy
-					</h1>
-					<div className="col s6 offset-s6 absolute imgCenter">
-						<img class={popImg} src={fire} alt="fire"></img>
-					</div>
+			<section className="row">
+				<h1 className="h1 fixed">
+					Carlos <br></br> Perez <br></br> Photo<br></br>Graphy
+				</h1>
+				<div className="col s6 offset-s6 absolute imgCenter">
+					<img class={popImg} src={fire} alt="fire"></img>
 				</div>
 			</section>
-			<section className="header-white row">
+			<section className="row">
 				<div className="col s6 offset-s6 absolute imgCenter">
 					<img class={popImg} src={mountains} alt="fire"></img>
 				</div>
 			</section>
-			<section className="header-black row">
+			<section className="row">
 				<div className="col s6 offset-s6 absolute imgCenter">
 					<img class={popImg} src={smoke} alt="fire"></img>
 				</div>
 			</section>
-			<section className="header-white row">
+			<section className="row">
 				<div className="col s6 offset-s6">
 					<h1>Thank you For visiting</h1>
 				</div>
