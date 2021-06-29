@@ -1,23 +1,28 @@
-import React, { useEffect, useState, useRef } from 'react';
-import M from 'materialize-css/dist/js/materialize.min.js';
-import './style.css';
+import React, { useEffect, useState, useRef } from "react";
+import M from "materialize-css/dist/js/materialize.min.js";
+import "./style.css";
 
 // Photos
-import logo from '../../public/Assets/black_logo.png';
-import fire from '../../public/Assets/gallery/fire.png';
-import stars from '../../public/Assets/gallery/stars.JPG';
-import mountains from '../../public/Assets/gallery/mountians.jpg';
-import smoke from '../../public/Assets/gallery/smoke.jpg';
+import logo from "../../public/Assets/black_logo.png";
+import fire from "../../public/Assets/gallery/fire.png";
+import stars from "../../public/Assets/gallery/stars.JPG";
+import mountains from "../../public/Assets/gallery/mountians.jpg";
+import smoke from "../../public/Assets/gallery/smoke.jpg";
 
 const FrontPage = () => {
 	useEffect(() => {
-		var materialbox = document.querySelectorAll('.materialboxed');
-		M.Materialbox.init(materialbox);
+		// var materialbox = document.querySelectorAll(".materialboxed");
+		// M.Materialbox.init(materialbox);
 	});
 
 	const fadeItem = useRef();
 
-	const [popImg, setPopImg] = useState('materialboxed sqrImg');
+	const [popImg, setPopImg] = useState("materialboxed sqrImg");
+	const [modalClass, setClasses] = useState("modalBody fixed");
+
+	const modal = () => {
+		setClasses("modalBody fixed active");
+	};
 
 	return (
 		<main>
@@ -27,17 +32,38 @@ const FrontPage = () => {
 						Carlos <br></br> Perez <br></br> Photo<br></br>Graphy
 					</h1>
 					<div className="col s6 offset-s6 absolute imgCenter">
-						<img class={popImg} src={fire} alt="fire"></img>
+						<a onClick={modal} data-modal-target="#modal1" href="#modal1">
+							<img className={popImg} src={fire} alt="fire"></img>
+						</a>
+					</div>
+
+					<div id="modal1" className={modalClass}>
+						<div className={modalClass}></div>
+
+						<img className="fullImg" src={fire} alt="fire"></img>
 					</div>
 				</section>
 				<section className="row">
 					<div className="col s6 offset-s6 absolute imgCenter">
-						<img class={popImg} src={mountains} alt="fire"></img>
+						<a onClick={modal} data-modal-target="#modal2" href="#modal2">
+							<img className={popImg} src={mountains} alt="fire"></img>
+						</a>
+					</div>
+
+					<div id="modal2" className={modalClass}>
+						<div className={modalClass}></div>
+						<img className="fullImg" src={mountains} alt="fire"></img>
 					</div>
 				</section>
 				<section className="row">
 					<div className="col s6 offset-s6 absolute imgCenter">
-						<img class={popImg} src={smoke} alt="fire"></img>
+						<a onClick={modal} data-modal-target="#modal3" href="#modal3">
+							<img className={popImg} src={smoke} alt="fire"></img>
+						</a>
+					</div>
+
+					<div id="modal3" className={modalClass}>
+						<img className="fullImg" src={smoke} alt="fire"></img>
 					</div>
 				</section>
 				<section className="row">

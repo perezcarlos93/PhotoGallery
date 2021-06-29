@@ -1,20 +1,20 @@
-import { React, useEffect } from 'react';
-import icon from '../../public/Assets/black_icon.ico';
-import M from 'materialize-css/dist/js/materialize.min.js';
-import './style.css';
+import { React, useEffect } from "react";
+import icon from "../../public/Assets/black_icon.ico";
+import M from "materialize-css/dist/js/materialize.min.js";
+import "./style.css";
 
 const NavBar = () => {
 	useEffect(() => {
-		var elems = document.querySelectorAll('.sidenav');
+		var elems = document.querySelectorAll(".sidenav");
 		M.Sidenav.init(elems);
 	});
 
-	var anchorOne = '';
-	var anchorOneText = '';
-	var anchorTwo = '';
-	var anchorTwoText = '';
-	var anchorThree = '';
-	var anchorThreeText = '';
+	var anchorOne = "";
+	var anchorOneText = "";
+	var anchorTwo = "";
+	var anchorTwoText = "";
+	var anchorThree = "";
+	var anchorThreeText = "";
 
 	const location = window.location.pathname;
 
@@ -22,45 +22,45 @@ const NavBar = () => {
 
 	const pagination = () => {
 		switch (window.location.pathname) {
-			case '/aboutme':
-				anchorOne = '/';
-				anchorOneText = 'Home';
-				anchorTwo = '/galleries';
-				anchorTwoText = 'Galleries';
-				anchorThree = '/contactme';
-				anchorThreeText = 'Contact Me';
+			case "/aboutme":
+				anchorOne = "/";
+				anchorOneText = "Home";
+				anchorTwo = "/galleries";
+				anchorTwoText = "Galleries";
+				anchorThree = "/contactme";
+				anchorThreeText = "Contact Me";
 				break;
-			case '/galleries':
-				anchorOne = '/';
-				anchorOneText = 'Home';
-				anchorTwo = '/aboutme';
-				anchorTwoText = 'About Me';
-				anchorThree = '/contactme';
-				anchorThreeText = 'Contact Me';
+			case "/galleries":
+				anchorOne = "/";
+				anchorOneText = "Home";
+				anchorTwo = "/aboutme";
+				anchorTwoText = "About Me";
+				anchorThree = "/contactme";
+				anchorThreeText = "Contact Me";
 				break;
-			case '/contactme':
-				anchorOne = '/';
-				anchorOneText = 'Home';
-				anchorTwo = '/aboutme';
-				anchorTwoText = 'About Me';
-				anchorThree = '/galleries';
-				anchorThreeText = 'Galleries';
+			case "/contactme":
+				anchorOne = "/";
+				anchorOneText = "Home";
+				anchorTwo = "/aboutme";
+				anchorTwoText = "About Me";
+				anchorThree = "/galleries";
+				anchorThreeText = "Galleries";
 				break;
-			case '/':
-				anchorOne = '/aboutme';
-				anchorOneText = 'About Me';
-				anchorTwo = '/galleries';
-				anchorTwoText = 'Galleries';
-				anchorThree = '/contactme';
-				anchorThreeText = 'Contact Me';
+			case "/":
+				anchorOne = "/aboutme";
+				anchorOneText = "About Me";
+				anchorTwo = "/galleries";
+				anchorTwoText = "Galleries";
+				anchorThree = "/contactme";
+				anchorThreeText = "Contact Me";
 				break;
 			default:
-				anchorOne = '/aboutme';
-				anchorOneText = 'About Me';
-				anchorTwo = '/galleries';
-				anchorTwoText = 'Galleries';
-				anchorThree = '/contactme';
-				anchorThreeText = 'Contact Me';
+				anchorOne = "/aboutme";
+				anchorOneText = "About Me";
+				anchorTwo = "/galleries";
+				anchorTwoText = "Galleries";
+				anchorThree = "/contactme";
+				anchorThreeText = "Contact Me";
 				break;
 		}
 	};
@@ -68,9 +68,9 @@ const NavBar = () => {
 	pagination();
 
 	return (
-		<div class="navbar-fixed nav">
+		<div className="navbar-fixed nav">
 			<nav className="transparent z-depth-0">
-				<div class="nav-wrapper nav">
+				<div className="nav-wrapper nav">
 					<a className="brand-logo logo" href="/">
 						<img
 							className="responsive-img logoImg absolute blend"
@@ -78,10 +78,10 @@ const NavBar = () => {
 							alt="Cp"
 						></img>
 					</a>
-					<a href="/" data-target="mobile-demo" class="sidenav-trigger">
-						<i class="material-icons black-text">menu</i>
+					<a href="/" data-target="mobile-demo" className="sidenav-trigger">
+						<i className="material-icons black-text">menu</i>
 					</a>
-					<ul class="right hide-on-med-and-down">
+					<ul className="right hide-on-med-and-down">
 						<li className="link blend">
 							<a className="white-text blend" href="/aboutme">
 								About Me
@@ -101,7 +101,7 @@ const NavBar = () => {
 				</div>
 			</nav>
 
-			<ul class="sidenav" id="mobile-demo">
+			<ul className="sidenav" id="mobile-demo">
 				<li className="link">
 					<a href={anchorOne}>{anchorOneText}</a>
 				</li>

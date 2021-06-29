@@ -28,3 +28,6 @@ body {
 .row {
 	margin-bottom: 0px;
 }
+.modal .modal-content {
+	padding: 0;
+}

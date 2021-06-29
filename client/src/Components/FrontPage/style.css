@@ -29,12 +29,6 @@ section:nth-child(odd) {
 	height: 28vw;
 	mix-blend-mode: difference;
 	z-index: 1;
-
-	animation: fadeIn linear 4s;
-	-webkit-animation: fadeIn linear 4s;
-	-moz-animation: fadeIn linear 4s;
-	-o-animation: fadeIn linear 4s;
-	-ms-animation: fadeIn linear 4s;
 }
 
 .imgCenter {
@@ -49,6 +43,34 @@ img:hover {
 	width: 28vw;
 	height: 28vw;
 	object-fit: cover;
+}
+
+.fullImg {
+	width: 70%;
+	height: auto;
+	display: block;
+}
+
+.modalBody {
+	width: 100vw;
+	height: 101vh;
+	transform: scale(0);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 10;
+	background-color: rgba(0, 0, 0, 0.8);
+	pointer-events: all;
+}
+
+.modalBody.active {
+	transform: scale(1);
+	animation: fadeIn linear 0.5s;
+	-webkit-animation: fadeIn linear 0.5s;
+	-moz-animation: fadeIn linear 0.5s;
+	-o-animation: fadeIn linear 0.5s;
+	-ms-animation: fadeIn linear 0.5s;
+	transition: 0.5s ease-in-out;
 }
 
 /* Custom Fade In Effect for Text */
