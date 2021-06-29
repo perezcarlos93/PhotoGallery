@@ -38,25 +38,22 @@ const FrontPage = () => {
 		// }
 	};
 
-	const defaultClasses = () => {
-		setModalOne("modalContainer fixed");
-		setModalTwo("modalContainer fixed");
-		setModalThree("modalContainer fixed");
-	};
-
-	document.addEventListener("mousedown", (event) => {
-		console.log(event);
-
+	const closeModal = (event) => {
 		if (
 			!event.target.id === "modalImgOne" ||
 			"modalImgTwo" ||
 			"modalImgThree"
 		) {
-			defaultClasses();
+			setModalOne("modalContainer fixed");
+			setModalTwo("modalContainer fixed");
+			setModalThree("modalContainer fixed");
 		} else {
 			return;
 		}
-	});
+	};
+
+	document.addEventListener("mousedown", closeModal);
+	document.addEventListener("scroll", closeModal);
 
 	return (
 		<main>
