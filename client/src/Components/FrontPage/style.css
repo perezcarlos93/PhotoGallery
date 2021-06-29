@@ -35,9 +35,9 @@ section:nth-child(odd) {
 	top: 10vw;
 }
 
-img:hover {
+/* img:hover {
 	cursor: none;
-}
+} */
 
 .sqrImg {
 	width: 28vw;
@@ -49,21 +49,10 @@ img:hover {
 	width: 70%;
 	height: auto;
 	display: block;
-}
-
-.modalBody {
-	width: 100vw;
-	height: 101vh;
 	transform: scale(0);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	z-index: 10;
-	background-color: rgba(0, 0, 0, 0.8);
-	pointer-events: all;
 }
 
-.modalBody.active {
+.activeImg {
 	transform: scale(1);
 	animation: fadeIn linear 0.5s;
 	-webkit-animation: fadeIn linear 0.5s;
@@ -71,6 +60,34 @@ img:hover {
 	-o-animation: fadeIn linear 0.5s;
 	-ms-animation: fadeIn linear 0.5s;
 	transition: 0.5s ease-in-out;
+}
+
+.modalContainer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	transform: translate(-50%, -50%) scale(0);
+	background-color: rgba(250, 250, 250, 0.2);
+	pointer-events: all;
+	z-index: 10;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modalBody {
+}
+
+.modalContainer.active {
+	transform: scale(1);
+	animation: fadeIn linear 0.2s;
+	-webkit-animation: fadeIn linear 0.2s;
+	-moz-animation: fadeIn linear 0.2s;
+	-o-animation: fadeIn linear 0.2s;
+	-ms-animation: fadeIn linear 0.2s;
+	transition: 0.2s ease-in-out;
 }
 
 /* Custom Fade In Effect for Text */

@@ -1,28 +1,62 @@
 import React, { useEffect, useState, useRef } from "react";
-import M from "materialize-css/dist/js/materialize.min.js";
+// import M from "materialize-css/dist/js/materialize.min.js";
 import "./style.css";
 
 // Photos
-import logo from "../../public/Assets/black_logo.png";
+// import logo from "../../public/Assets/black_logo.png";
 import fire from "../../public/Assets/gallery/fire.png";
-import stars from "../../public/Assets/gallery/stars.JPG";
+// import stars from "../../public/Assets/gallery/stars.JPG";
 import mountains from "../../public/Assets/gallery/mountians.jpg";
 import smoke from "../../public/Assets/gallery/smoke.jpg";
 
 const FrontPage = () => {
-	useEffect(() => {
-		// var materialbox = document.querySelectorAll(".materialboxed");
-		// M.Materialbox.init(materialbox);
-	});
+	const ref = useRef();
 
 	const fadeItem = useRef();
 
 	const [popImg, setPopImg] = useState("materialboxed sqrImg");
-	const [modalClass, setClasses] = useState("modalBody fixed");
+	const [modalOne, setModalOne] = useState("modalContainer fixed");
+	const [modalTwo, setModalTwo] = useState("modalContainer fixed");
+	const [modalThree, setModalThree] = useState("modalContainer fixed");
+	const [modalImg, setImgClass] = useState("fullImg");
 
-	const modal = () => {
-		setClasses("modalBody fixed active");
+	const modal = (event) => {
+		console.log(event);
+
+		if (event.target.id === "modal1trigger") {
+			setModalOne("modalContainer fixed active");
+		} else if (event.target.id === "modal2trigger") {
+			setModalTwo("modalContainer fixed active");
+		} else if (event.target.id === "modal3trigger") {
+			setModalThree("modalContainer fixed active");
+		}
+
+		setImgClass("fullImg activeImg");
+
+		// if (ref.current && !ref.current.contains(event.target)) {
+		// 	alert("You clicked outside of me!");
+		// }
 	};
+
+	const defaultClasses = () => {
+		setModalOne("modalContainer fixed");
+		setModalTwo("modalContainer fixed");
+		setModalThree("modalContainer fixed");
+	};
+
+	document.addEventListener("mousedown", (event) => {
+		console.log(event);
+
+		if (
+			!event.target.id === "modalImgOne" ||
+			"modalImgTwo" ||
+			"modalImgThree"
+		) {
+			defaultClasses();
+		} else {
+			return;
+		}
+	});
 
 	return (
 		<main>
@@ -33,37 +67,64 @@ const FrontPage = () => {
 					</h1>
 					<div className="col s6 offset-s6 absolute imgCenter">
 						<a onClick={modal} data-modal-target="#modal1" href="#modal1">
-							<img className={popImg} src={fire} alt="fire"></img>
+							<img
+								id="modal1trigger"
+								className={popImg}
+								src={fire}
+								alt="fire"
+							></img>
 						</a>
 					</div>
 
-					<div id="modal1" className={modalClass}>
-						<div className={modalClass}></div>
-
-						<img className="fullImg" src={fire} alt="fire"></img>
+					<div id="modal1" className={modalOne}>
+						<img
+							id="modalImgOne"
+							className={modalImg}
+							src={fire}
+							alt="fire"
+						></img>
 					</div>
 				</section>
 				<section className="row">
 					<div className="col s6 offset-s6 absolute imgCenter">
 						<a onClick={modal} data-modal-target="#modal2" href="#modal2">
-							<img className={popImg} src={mountains} alt="fire"></img>
+							<img
+								id="modal2trigger"
+								className={popImg}
+								src={mountains}
+								alt="fire"
+							></img>
 						</a>
 					</div>
 
-					<div id="modal2" className={modalClass}>
-						<div className={modalClass}></div>
-						<img className="fullImg" src={mountains} alt="fire"></img>
+					<div id="modal2" className={modalTwo}>
+						<img
+							id="modalImgTwo"
+							className={modalImg}
+							src={mountains}
+							alt="fire"
+						></img>
 					</div>
 				</section>
 				<section className="row">
 					<div className="col s6 offset-s6 absolute imgCenter">
 						<a onClick={modal} data-modal-target="#modal3" href="#modal3">
-							<img className={popImg} src={smoke} alt="fire"></img>
+							<img
+								id="modal3trigger"
+								className={popImg}
+								src={smoke}
+								alt="fire"
+							></img>
 						</a>
 					</div>
 
-					<div id="modal3" className={modalClass}>
-						<img className="fullImg" src={smoke} alt="fire"></img>
+					<div id="modal3" className={modalThree}>
+						<img
+							id="modalImgThree"
+							className={modalImg}
+							src={smoke}
+							alt="fire"
+						></img>
 					</div>
 				</section>
 				<section className="row">
