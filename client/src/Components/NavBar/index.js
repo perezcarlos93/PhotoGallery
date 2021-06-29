@@ -1,5 +1,5 @@
 import { React, useEffect } from 'react';
-import logo from '../../public/Assets/black_logo.png';
+import icon from '../../public/Assets/black_icon.ico';
 import M from 'materialize-css/dist/js/materialize.min.js';
 import './style.css';
 
@@ -74,7 +74,7 @@ const NavBar = () => {
 					<a className="brand-logo logo" href="/">
 						<img
 							className="responsive-img logoImg absolute blend"
-							src={logo}
+							src={icon}
 							alt="Cp"
 						></img>
 					</a>

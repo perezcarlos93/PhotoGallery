@@ -4,12 +4,15 @@
 	min-width: 5%;
 	min-height: 5%;
 	padding-top: 1.8rem;
+	mix-blend-mode: difference;
 }
 .logoImg {
 	display: inline;
 	width: 60px;
 	padding: 0.2rem;
 	margin-left: 1rem;
+	mix-blend-mode: difference;
+
 	/* z-index: 3; */
 }
 .nav {
