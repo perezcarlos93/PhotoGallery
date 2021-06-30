@@ -1,25 +1,27 @@
-import React, { useEffect, useState, useRef } from "react";
-// import M from "materialize-css/dist/js/materialize.min.js";
+import React, { useState, useRef, useEffect } from "react";
 import "./style.css";
 
 // Photos
-// import logo from "../../public/Assets/black_logo.png";
 import fire from "../../public/Assets/gallery/fire.png";
-// import stars from "../../public/Assets/gallery/stars.JPG";
 import mountains from "../../public/Assets/gallery/mountians.jpg";
 import smoke from "../../public/Assets/gallery/smoke.jpg";
+// import logo from "../../public/Assets/black_logo.png";
+// import stars from "../../public/Assets/gallery/stars.JPG";
 
 const FrontPage = () => {
-	const ref = useRef();
-
 	const fadeItem = useRef();
 
-	const [popImg, setPopImg] = useState("materialboxed sqrImg");
+	// States for each modal to handle CSS classes
 	const [modalOne, setModalOne] = useState("modalContainer fixed");
 	const [modalTwo, setModalTwo] = useState("modalContainer fixed");
 	const [modalThree, setModalThree] = useState("modalContainer fixed");
 	const [modalImg, setImgClass] = useState("fullImg");
 
+	// State for fading in text at bottom of page
+	const [isVisible, setVisibility] = useState(false);
+	const [fadeClass, setFadeClass] = useState("fadeGone");
+
+	// Function that triggers modal activation by setting class state to include "active" class
 	const modal = (event) => {
 		console.log(event);
 
@@ -32,12 +34,9 @@ const FrontPage = () => {
 		}
 
 		setImgClass("fullImg activeImg");
-
-		// if (ref.current && !ref.current.contains(event.target)) {
-		// 	alert("You clicked outside of me!");
-		// }
 	};
 
+	// Class that resets modal classes to default when user clicks outside of image
 	const closeModal = (event) => {
 		if (
 			!event.target.id === "modalImgOne" ||
@@ -52,8 +51,31 @@ const FrontPage = () => {
 		}
 	};
 
+	// Event Listeners to trigger modal closure
 	document.addEventListener("mousedown", closeModal);
 	document.addEventListener("scroll", closeModal);
+
+	useEffect(() => {
+		const options = {
+			root: null,
+			rootMargin: "0px",
+			threshold: 1.0,
+		};
+		const observer = new IntersectionObserver((entries, observer) => {
+			const [entry] = entries;
+			setVisibility(entry.isIntersecting);
+			console.log(entry);
+		}, options);
+
+		if (fadeItem.current) {
+			observer.observe(fadeItem.current);
+			setFadeClass("fadeIn");
+		}
+
+		return () => {
+			if (fadeItem.current) observer.unobserve(fadeItem.current);
+		};
+	}, [fadeItem]);
 
 	return (
 		<main>
@@ -66,9 +88,10 @@ const FrontPage = () => {
 						<a onClick={modal} data-modal-target="#modal1" href="#modal1">
 							<img
 								id="modal1trigger"
-								className={popImg}
+								className="materialboxed sqrImg"
 								src={fire}
 								alt="fire"
+								loading="lazy"
 							></img>
 						</a>
 					</div>
@@ -79,6 +102,7 @@ const FrontPage = () => {
 							className={modalImg}
 							src={fire}
 							alt="fire"
+							loading="lazy"
 						></img>
 					</div>
 				</section>
@@ -87,9 +111,10 @@ const FrontPage = () => {
 						<a onClick={modal} data-modal-target="#modal2" href="#modal2">
 							<img
 								id="modal2trigger"
-								className={popImg}
+								className="materialboxed sqrImg"
 								src={mountains}
 								alt="fire"
+								loading="lazy"
 							></img>
 						</a>
 					</div>
@@ -100,6 +125,7 @@ const FrontPage = () => {
 							className={modalImg}
 							src={mountains}
 							alt="fire"
+							loading="lazy"
 						></img>
 					</div>
 				</section>
@@ -108,9 +134,10 @@ const FrontPage = () => {
 						<a onClick={modal} data-modal-target="#modal3" href="#modal3">
 							<img
 								id="modal3trigger"
-								className={popImg}
+								className="materialboxed sqrImg"
 								src={smoke}
 								alt="fire"
+								loading="lazy"
 							></img>
 						</a>
 					</div>
@@ -121,15 +148,16 @@ const FrontPage = () => {
 							className={modalImg}
 							src={smoke}
 							alt="fire"
+							loading="lazy"
 						></img>
 					</div>
 				</section>
 				<section className="row">
-					<div className="col s6 offset-s6">
-						<h1 ref={fadeItem} className="fadeIn fadeIn-head">
+					<div id="intro" className="col s6 offset-s6">
+						<h1 ref={fadeItem} className={fadeClass}>
 							<b>Thank you For visiting</b>
 						</h1>
-						<p ref={fadeItem} className="fadeIn fadeIn-body">
+						<p ref={fadeItem} className={fadeClass}>
 							Here you will find the culmination of my love for photography, for
 							beauty, and for design, with my talent and passion as a developer.
 						</p>
