@@ -25,9 +25,35 @@ body {
 .relative {
 	position: relative;
 }
+.sticky {
+	position: sticky;
+}
 .row {
 	margin-bottom: 0px;
 }
 .modal .modal-content {
 	padding: 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	color: white;
+	background-color: grey;
+	border-radius: 25px;
+	height: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
 }

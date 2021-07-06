@@ -21,6 +21,9 @@ const FrontPage = () => {
 	const [isVisible, setVisibility] = useState(false);
 	const [fadeClass, setFadeClass] = useState("fadeGone");
 
+	// State for H1 to switch from Fixed to Sticky
+	const [h1Class, setH1Class] = useState("h1 fixed");
+
 	// Function that triggers modal activation by setting class state to include "active" class
 	const modal = (event) => {
 		console.log(event);
@@ -58,30 +61,37 @@ const FrontPage = () => {
 	useEffect(() => {
 		const options = {
 			root: null,
-			rootMargin: "0px",
+			rootMargin: "300px 0px 0px 0px",
 			threshold: 1.0,
 		};
+
 		const observer = new IntersectionObserver((entries, observer) => {
 			const [entry] = entries;
-			setVisibility(entry.isIntersecting);
-			console.log(entry);
+			if (entry.isIntersecting) {
+				setVisibility(true);
+			}
+			// console.log(entry);
 		}, options);
+
+		console.log("Observer", observer);
 
 		if (fadeItem.current) {
 			observer.observe(fadeItem.current);
+		}
+		if (isVisible) {
 			setFadeClass("fadeIn");
 		}
 
 		return () => {
 			if (fadeItem.current) observer.unobserve(fadeItem.current);
 		};
-	}, [fadeItem]);
+	}, [fadeItem, isVisible]);
 
 	return (
 		<main>
 			<div className="relative">
 				<section className="row">
-					<h1 className="h1 fixed">
+					<h1 className={h1Class}>
 						Carlos <br></br> Perez <br></br> Photo<br></br>Graphy
 					</h1>
 					<div className="col s6 offset-s6 absolute imgCenter">
@@ -153,13 +163,16 @@ const FrontPage = () => {
 					</div>
 				</section>
 				<section className="row">
-					<div id="intro" className="col s6 offset-s6">
-						<h1 ref={fadeItem} className={fadeClass}>
-							<b>Thank you For visiting</b>
+					<div ref={fadeItem} id="intro" className="col s6 offset-s6">
+						<h1 className={fadeClass}>
+							<b>Thank you for visiting</b>
 						</h1>
-						<p ref={fadeItem} className={fadeClass}>
-							Here you will find the culmination of my love for photography, for
-							beauty, and for design, with my talent and passion as a developer.
+						<p id="introBody" className={fadeClass}>
+							Here you will find the culmination of my love for photography,
+							beauty, and design, with my talent and passion as a developer.
+							<br></br>
+							<br></br>I hope you enjoy yourself and find my work just as
+							beautiful I as have
 						</p>
 					</div>
 				</section>

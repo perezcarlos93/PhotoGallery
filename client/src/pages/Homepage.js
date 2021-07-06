@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
-import NavBar from '../Components/NavBar';
-import FrontPage from '../Components/FrontPage';
-import M from 'materialize-css/dist/js/materialize.min.js';
+import React from "react";
+import Footer from "../Components/Footer";
+// import NavBar from "../Components/NavBar";
+import FrontPage from "../Components/FrontPage";
 
 const Homepage = () => {
 	return (
@@ -10,6 +10,7 @@ const Homepage = () => {
 			<FrontPage />
 			<br></br>
 			<br></br>
+			<Footer />
 		</div>
 	);
 };

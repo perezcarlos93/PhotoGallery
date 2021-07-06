@@ -1,9 +1,13 @@
 footer {
-	margin-top: 10vw;
+	margin-top: 30vw;
 	position: relative;
 	justify-content: center;
+	z-index: 100;
 }
 .footerLinks {
 	position: absolute;
 	bottom: 5vw;
+}
+.permissionText {
+	margin-top: 200px;
 }
