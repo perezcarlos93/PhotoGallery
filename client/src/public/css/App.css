@@ -16,23 +16,6 @@
 	color: white;
 }
 
-/* Removing default attributes of links */
-.link {
-	text-decoration: none;
-}
-/* .link:hover {
-	color: rgba(211, 211, 211, 0.527);
-	text-decoration: none;
-	cursor: pointer;
-} */
-/* .grow {
-	transition: all 0.2s ease-in-out;
-}
-
-.grow:hover {
-	transform: scale(1.1);
-} */
-
 /* Uncategorized CSS */
 .hidden {
 	display: none;

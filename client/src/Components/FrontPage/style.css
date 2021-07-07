@@ -11,18 +11,12 @@ section {
 	bottom: 4.5rem;
 	width: 100%;
 	display: flex;
+
+	scroll-snap-align: center;
 }
 
 section:nth-child(odd) {
 	background-color: black;
-}
-
-.scroll {
-	/* overflow-y: scroll; */
-}
-.scrollItem {
-	border-bottom: 10px solid white;
-	scroll-snap-align: center;
 }
 
 /* Fixed-Left Floating Box in 1:1 ratio */
@@ -54,21 +48,21 @@ section:nth-child(odd) {
 
 /* Image Class for Modal to display image at full resolution */
 .fullImg {
-	width: 70%;
-	height: auto;
-	display: block;
+	transform: scale(0);
+	transition: 0.5s ease-out;
 
 	animation: fadeIn linear 0.5s;
 	-webkit-animation: fadeIn linear 0.5s;
 	-moz-animation: fadeIn linear 0.5s;
 	-o-animation: fadeIn linear 0.5s;
 	-ms-animation: fadeIn linear 0.5s;
-	transition: 0.5s ease-in-out;
-
-	transform: scale(0);
 }
 
 .activeImg {
+	width: auto;
+	max-height: 80%;
+	display: block;
+
 	transform: scale(1);
 	animation: fadeIn linear 0.5s;
 	-webkit-animation: fadeIn linear 0.5s;
@@ -79,6 +73,7 @@ section:nth-child(odd) {
 }
 
 .modalContainer {
+	transform: scale(0);
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -91,23 +86,21 @@ section:nth-child(odd) {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
-	animation: fadeIn linear 0.5s;
-	-webkit-animation: fadeIn linear 0.5s;
-	-moz-animation: fadeIn linear 0.5s;
-	-o-animation: fadeIn linear 0.5s;
-	-ms-animation: fadeIn linear 0.5s;
-	transition: 0.5s ease-in-out;
 }
 
-.modalContainer.active {
-	transform: scale(1);
+.inactive {
+	transform: scale(0);
+	transition: 1s ease-in-out;
+
 	animation: fadeIn linear 0.2s;
 	-webkit-animation: fadeIn linear 0.2s;
 	-moz-animation: fadeIn linear 0.2s;
 	-o-animation: fadeIn linear 0.2s;
 	-ms-animation: fadeIn linear 0.2s;
-	transition: 0.2s ease-in-out;
+}
+
+.modalContainer.active {
+	transform: scale(1);
 }
 
 /* Custom Fade In Effect for Text */

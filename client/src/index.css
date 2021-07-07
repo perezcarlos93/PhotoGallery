@@ -26,6 +26,17 @@ body {
 	padding: 0;
 }
 
+/* Removing default attributes of links */
+.link {
+	text-decoration: none;
+	color: unset;
+}
+.link:hover {
+	color: grey;
+	font-weight: bold;
+}
+
+/* ----------- CUSTOM SCROLL BAR ----------- */
 /* width */
 ::-webkit-scrollbar {
 	width: 5px;

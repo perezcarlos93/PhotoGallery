@@ -1,5 +1,5 @@
 import { React, useEffect } from "react";
-import icon from "../../public/Assets/black_icon.ico";
+// import icon from "../../public/Assets/black_icon.ico";
 import M from "materialize-css/dist/js/materialize.min.js";
 import "./style.css";
 

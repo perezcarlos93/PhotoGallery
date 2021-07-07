@@ -1,3 +1,4 @@
+// Standard Imports
 import React, { useState, useRef, useEffect } from "react";
 import "./style.css";
 
@@ -7,20 +8,15 @@ import mountains from "../../public/Assets/gallery/mountians.jpg";
 import smoke from "../../public/Assets/gallery/smoke.jpg";
 
 const FrontPage = () => {
-	const fadeItem = useRef();
-
 	// States for each modal to handle CSS classes
 	const [modalOne, setModalOne] = useState("modalContainer fixed");
 	const [modalTwo, setModalTwo] = useState("modalContainer fixed");
 	const [modalThree, setModalThree] = useState("modalContainer fixed");
-	const [modalImg, setImgClass] = useState("fullImg");
+	const [modalImg, setImgClass] = useState("fullImg inactive");
 
 	// State for fading in text at bottom of page
 	const [isVisible, setVisibility] = useState(false);
 	const [fadeClass, setFadeClass] = useState("fadeGone");
-
-	// State for H1 to switch from Fixed to Sticky
-	const [h1Class, setH1Class] = useState("h1 fixed");
 
 	// Function that triggers modal activation by setting class state to include "active" class
 	const modal = (event) => {
@@ -47,14 +43,19 @@ const FrontPage = () => {
 			setModalOne("modalContainer fixed");
 			setModalTwo("modalContainer fixed");
 			setModalThree("modalContainer fixed");
+
+			setImgClass("fullImg inactive");
 		} else {
 			return;
 		}
 	};
 
-	// Event Listeners to trigger modal closure
+	// Event Listeners to trigger modal closure - Either clicking outside the modal, or scrolling away
 	document.addEventListener("mousedown", closeModal);
 	document.addEventListener("scroll", closeModal);
+
+	// Ref for fading in text
+	const fadeItem = useRef();
 
 	useEffect(() => {
 		const options = {
@@ -63,19 +64,23 @@ const FrontPage = () => {
 			threshold: 1.0,
 		};
 
+		// Observer to look out for Intro Section text
 		const observer = new IntersectionObserver((entries, observer) => {
 			const [entry] = entries;
 			if (entry.isIntersecting) {
 				setVisibility(true);
 			}
-			// console.log(entry);
 		}, options);
 
-		console.log("Observer", observer);
-
+		// Using Ref to check if text is visible to trigger observer
 		if (fadeItem.current) {
 			observer.observe(fadeItem.current);
 		}
+
+		/* 
+		If observer is triggered, "isVisible" object is switched to true and
+		class is set to "fadeIn" to trigger text fade in animation
+		*/
 		if (isVisible) {
 			setFadeClass("fadeIn");
 		}
@@ -87,9 +92,9 @@ const FrontPage = () => {
 
 	return (
 		<main>
-			<div className="relative scroll">
-				<section className="row scrollItem">
-					<h1 className={h1Class}>
+			<div className="relative">
+				<section className="row">
+					<h1 className="h1 fixed">
 						Carlos <br></br> Perez <br></br> Photo<br></br>Graphy
 					</h1>
 					<div className="col s6 offset-s6 absolute imgCenter">
@@ -114,7 +119,7 @@ const FrontPage = () => {
 						></img>
 					</div>
 				</section>
-				<section className="row scrollItem">
+				<section className="row">
 					<div className="col s6 offset-s6 absolute imgCenter">
 						<a onClick={modal} data-modal-target="#modal2" href="#modal2">
 							<img
@@ -137,7 +142,7 @@ const FrontPage = () => {
 						></img>
 					</div>
 				</section>
-				<section className="row scrollItem">
+				<section className="row">
 					<div className="col s6 offset-s6 absolute imgCenter">
 						<a onClick={modal} data-modal-target="#modal3" href="#modal3">
 							<img
@@ -160,7 +165,8 @@ const FrontPage = () => {
 						></img>
 					</div>
 				</section>
-				<section className="row scrollItem">
+				{/* INTRO SECTION */}
+				<section className="row">
 					<div ref={fadeItem} id="intro" className="col s6 offset-s6">
 						<h1 className={fadeClass}>
 							<b>Thank you for visiting</b>
@@ -171,6 +177,11 @@ const FrontPage = () => {
 							<br></br>
 							<br></br>I hope you enjoy yourself and find my work just as
 							beautiful I as have
+							<br></br>Visit the{" "}
+							<a href="/galleries" className="link">
+								galleries tab
+							</a>{" "}
+							to see more
 						</p>
 					</div>
 				</section>
