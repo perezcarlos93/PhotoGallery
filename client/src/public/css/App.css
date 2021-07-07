@@ -1,18 +1,18 @@
 /* Custom Fonts */
 @font-face {
-	src: url('../Assets/ONEDAY.ttf');
-	font-family: 'oneday';
+	src: url("../Assets/ONEDAY.ttf");
+	font-family: "oneday";
 }
 .oneday {
-	font-family: 'oneday';
+	font-family: "oneday";
 	color: white;
 }
 @font-face {
-	src: url('../Assets/ebrima.ttf');
-	font-family: 'ebrima';
+	src: url("../Assets/ebrima.ttf");
+	font-family: "ebrima";
 }
 .ebrima {
-	font-family: 'ebrima';
+	font-family: "ebrima";
 	color: white;
 }
 

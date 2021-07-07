@@ -5,8 +5,6 @@ import "./style.css";
 import fire from "../../public/Assets/gallery/fire.png";
 import mountains from "../../public/Assets/gallery/mountians.jpg";
 import smoke from "../../public/Assets/gallery/smoke.jpg";
-// import logo from "../../public/Assets/black_logo.png";
-// import stars from "../../public/Assets/gallery/stars.JPG";
 
 const FrontPage = () => {
 	const fadeItem = useRef();

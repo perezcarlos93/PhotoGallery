@@ -16,10 +16,6 @@ const NavBar = () => {
 	var anchorThree = "";
 	var anchorThreeText = "";
 
-	const location = window.location.pathname;
-
-	console.log(location);
-
 	const pagination = () => {
 		switch (window.location.pathname) {
 			case "/aboutme":
@@ -68,18 +64,18 @@ const NavBar = () => {
 	pagination();
 
 	return (
-		<div className="navbar-fixed nav">
+		<div className="navbar-fixed nav transparent">
 			<nav className="transparent z-depth-0">
 				<div className="nav-wrapper nav">
 					<a className="brand-logo logo" href="/">
-						<img
-							className="responsive-img logoImg absolute blend"
-							src={icon}
-							alt="Cp"
-						></img>
+						<i class="material-icons"></i>
 					</a>
-					<a href="/" data-target="mobile-demo" className="sidenav-trigger">
-						<i className="material-icons black-text">menu</i>
+					<a
+						href="/"
+						data-target="mobile-demo"
+						className="sidenav-trigger sideLogo"
+					>
+						<i className="material-icons">menu</i>
 					</a>
 					<ul className="right hide-on-med-and-down">
 						<li className="link blend">
@@ -102,13 +98,13 @@ const NavBar = () => {
 			</nav>
 
 			<ul className="sidenav" id="mobile-demo">
-				<li className="link">
+				<li className="">
 					<a href={anchorOne}>{anchorOneText}</a>
 				</li>
-				<li className="link">
+				<li className="">
 					<a href={anchorTwo}>{anchorTwoText}</a>
 				</li>
-				<li className="link">
+				<li className="">
 					<a href={anchorThree}>{anchorThreeText}</a>
 				</li>
 			</ul>

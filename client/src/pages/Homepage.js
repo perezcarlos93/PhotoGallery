@@ -6,7 +6,6 @@ import FrontPage from "../Components/FrontPage";
 const Homepage = () => {
 	return (
 		<div>
-			{/* <NavBar /> */}
 			<FrontPage />
 			<br></br>
 			<br></br>

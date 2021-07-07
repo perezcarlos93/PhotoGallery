@@ -4,7 +4,8 @@ body {
 }
 
 main {
-	scroll-snap-type: y mandatory;
+	scroll-snap-type: y proximity;
+	overflow: scroll;
 }
 
 section {
