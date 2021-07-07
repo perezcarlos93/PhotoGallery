@@ -61,7 +61,7 @@ const FrontPage = () => {
 		const options = {
 			root: null,
 			rootMargin: "10px 0px 0px 0px",
-			threshold: 1.0,
+			threshold: 0.8,
 		};
 
 		// Observer to look out for Intro Section text
