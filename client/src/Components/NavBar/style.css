@@ -19,8 +19,8 @@
 	z-index: 1;
 }
 .sidenav {
+	max-width: 50%;
 	mix-blend-mode: none;
-	z-index: 10;
 }
 .sideLogo {
 	mix-blend-mode: difference;

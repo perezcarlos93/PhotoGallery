@@ -3,11 +3,6 @@ body {
 	cursor: cell;
 }
 
-main {
-	scroll-snap-type: y proximity;
-	overflow: scroll;
-}
-
 section {
 	background-color: white;
 	position: relative;
@@ -15,12 +10,19 @@ section {
 	max-height: 101vh;
 	bottom: 4.5rem;
 	width: 100%;
-
-	scroll-snap-align: start;
+	display: flex;
 }
 
 section:nth-child(odd) {
 	background-color: black;
+}
+
+.scroll {
+	/* overflow-y: scroll; */
+}
+.scrollItem {
+	border-bottom: 10px solid white;
+	scroll-snap-align: center;
 }
 
 /* Fixed-Left Floating Box in 1:1 ratio */

@@ -87,8 +87,8 @@ const FrontPage = () => {
 
 	return (
 		<main>
-			<div className="relative">
-				<section className="row">
+			<div className="relative scroll">
+				<section className="row scrollItem">
 					<h1 className={h1Class}>
 						Carlos <br></br> Perez <br></br> Photo<br></br>Graphy
 					</h1>
@@ -114,7 +114,7 @@ const FrontPage = () => {
 						></img>
 					</div>
 				</section>
-				<section className="row">
+				<section className="row scrollItem">
 					<div className="col s6 offset-s6 absolute imgCenter">
 						<a onClick={modal} data-modal-target="#modal2" href="#modal2">
 							<img
@@ -137,7 +137,7 @@ const FrontPage = () => {
 						></img>
 					</div>
 				</section>
-				<section className="row">
+				<section className="row scrollItem">
 					<div className="col s6 offset-s6 absolute imgCenter">
 						<a onClick={modal} data-modal-target="#modal3" href="#modal3">
 							<img
@@ -160,7 +160,7 @@ const FrontPage = () => {
 						></img>
 					</div>
 				</section>
-				<section className="row">
+				<section className="row scrollItem">
 					<div ref={fadeItem} id="intro" className="col s6 offset-s6">
 						<h1 className={fadeClass}>
 							<b>Thank you for visiting</b>
