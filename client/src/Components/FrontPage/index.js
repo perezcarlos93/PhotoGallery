@@ -73,7 +73,7 @@ const FrontPage = () => {
 		<main>
 			<div className="relative">
 				<section className="row">
-					<h1 className="h1 fixed">
+					<h1 className="h1 fixed mbm-d">
 						Carlos <br></br> Perez <br></br> Photo<br></br>Graphy
 					</h1>
 					<Modal

@@ -3,25 +3,29 @@
 .logo {
 	padding-top: 1.8rem;
 	margin-left: 1.8rem;
+	font-family: "Vanity-Bold";
+	font-size: 130%;
+	letter-spacing: 2px;
 }
 .logoImg {
 	display: inline;
 	width: 60px;
 	padding: 0.2rem;
 	margin-left: 1rem;
-	mix-blend-mode: difference;
-
-	/* z-index: 3; */
 }
 .nav {
 	background-color: rgb(0, 0, 0);
-	mix-blend-mode: difference;
 	z-index: 1;
 }
 .sidenav {
 	max-width: 50%;
 	mix-blend-mode: none;
+	z-index: 15;
 }
 .sideLogo {
 	mix-blend-mode: difference;
+}
+
+.anchor {
+	transition-duration: 1s;
 }

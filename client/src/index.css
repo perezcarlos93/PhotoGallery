@@ -8,6 +8,11 @@ body {
 	cursor: cell;
 }
 
+@font-face {
+	font-family: "Vanity-Bold";
+	src: url("./public/Assets/Vanity-Bold.ttf");
+}
+
 .absolute {
 	position: absolute;
 }
@@ -62,7 +67,7 @@ body {
 }
 .sidenav-overlay {
 	background-color: rgba(0, 0, 0, 1);
-	z-index: 15;
+	z-index: 1;
 }
 
 /* Custom Fade In Effect for Text */
@@ -109,4 +114,25 @@ body {
 	100% {
 		opacity: 1;
 	}
+}
+
+section {
+	background-color: white;
+	position: relative;
+	height: 101vh;
+	max-height: 101vh;
+	bottom: 4.5rem;
+	width: 100%;
+	display: flex;
+
+	scroll-snap-align: center;
+}
+
+section:nth-child(odd) {
+	background-color: black;
+}
+
+/* Sets Mix-Blend-Mode to Difference */
+.mbm-d {
+	mix-blend-mode: difference;
 }

@@ -64,11 +64,11 @@ const NavBar = () => {
 	pagination();
 
 	return (
-		<div className="navbar-fixed nav transparent">
+		<div className="navbar-fixed nav transparent mbm-d">
 			<nav className="transparent z-depth-0">
 				<div className="nav-wrapper nav">
-					<a className="brand-logo logo" href="/">
-						<i className="material-icons"></i>
+					<a className="brand-logo" href="/">
+						<span className="logo">CP</span>
 					</a>
 					<a
 						href="/"
