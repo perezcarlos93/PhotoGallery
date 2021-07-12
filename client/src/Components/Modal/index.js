@@ -11,7 +11,7 @@ const Modal = (props) => {
 		// Event Listeners to trigger modal closure - Either clicking outside the modal, or scrolling away
 		if (modalClass === "modalContainer fixed active") {
 			document.addEventListener("mousedown", closeModal);
-			document.addEventListener("scroll", closeModal);
+			document.addEventListener("scroll", closeModal, { passive: true });
 		}
 	});
 
