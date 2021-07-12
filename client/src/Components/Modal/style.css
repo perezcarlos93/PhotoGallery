@@ -1,0 +1,58 @@
+.imgCenter {
+	top: 10vw;
+}
+
+/* Initial Image Class to maintain 1:1 box ratio */
+.sqrImg {
+	width: 28vw;
+	height: 28vw;
+	object-fit: cover;
+}
+
+/* Image Class for Modal to display image at full resolution */
+.fullImg {
+	transform: scale(0);
+	transition: 0.5s ease-in-out;
+
+	animation: fadeIn linear 0.5s;
+	-webkit-animation: fadeIn linear 0.5s;
+	-moz-animation: fadeIn linear 0.5s;
+	-o-animation: fadeIn linear 0.5s;
+	-ms-animation: fadeIn linear 0.5s;
+}
+
+.activeImg {
+	width: auto;
+	max-height: 80%;
+	display: block;
+
+	transform: scale(1);
+	animation: fadeIn linear 0.5s;
+	-webkit-animation: fadeIn linear 0.5s;
+	-moz-animation: fadeIn linear 0.5s;
+	-o-animation: fadeIn linear 0.5s;
+	-ms-animation: fadeIn linear 0.5s;
+	transition: 0.5s ease-in-out;
+}
+
+.modalContainer {
+	transform: scale(0);
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	transform: translate(-50%, -50%) scale(0);
+	background-color: rgba(250, 250, 250, 0.1);
+	pointer-events: all;
+	z-index: 10;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* .modalContainer */
+
+.active {
+	transform: scale(1);
+}

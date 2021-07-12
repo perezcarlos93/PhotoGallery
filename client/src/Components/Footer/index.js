@@ -49,14 +49,6 @@ const Footer = () => {
 					</div>
 				</div>
 			</div>
-			<div className="footer-copyright grey darken-4">
-				<div className="container">
-					2021
-					<a className="grey-text text-lighten-4 right" href="#!">
-						More Links
-					</a>
-				</div>
-			</div>
 		</footer>
 	);
 };
