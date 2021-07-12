@@ -2,6 +2,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./style.css";
 
+// Components
+import Modal from "../Modal";
+
 // Photos
 import fire from "../../public/Assets/gallery/fire.png";
 import mountains from "../../public/Assets/gallery/mountians.jpg";
@@ -9,50 +12,50 @@ import smoke from "../../public/Assets/gallery/smoke.jpg";
 
 const FrontPage = () => {
 	// States for each modal to handle CSS classes
-	const [modalOne, setModalOne] = useState("modalContainer fixed");
-	const [modalTwo, setModalTwo] = useState("modalContainer fixed");
-	const [modalThree, setModalThree] = useState("modalContainer fixed");
-	const [modalImg, setImgClass] = useState("fullImg inactive");
+	// const [modalOne, setModalOne] = useState("modalContainer fixed");
+	// const [modalTwo, setModalTwo] = useState("modalContainer fixed");
+	// const [modalThree, setModalThree] = useState("modalContainer fixed");
+	// const [modalImg, setImgClass] = useState("fullImg inactive");
 
 	// State for fading in text at bottom of page
 	const [isVisible, setVisibility] = useState(false);
 	const [fadeClass, setFadeClass] = useState("fadeGone");
 
 	// Function that triggers modal activation by setting class state to include "active" class
-	const modal = (event) => {
-		console.log(event);
+	// const modal = (event) => {
+	// 	console.log(event);
 
-		if (event.target.id === "modal1trigger") {
-			setModalOne("modalContainer fixed active");
-		} else if (event.target.id === "modal2trigger") {
-			setModalTwo("modalContainer fixed active");
-		} else if (event.target.id === "modal3trigger") {
-			setModalThree("modalContainer fixed active");
-		}
+	// 	if (event.target.id === "modal1trigger") {
+	// 		setModalOne("modalContainer fixed active");
+	// 	} else if (event.target.id === "modal2trigger") {
+	// 		setModalTwo("modalContainer fixed active");
+	// 	} else if (event.target.id === "modal3trigger") {
+	// 		setModalThree("modalContainer fixed active");
+	// 	}
 
-		setImgClass("fullImg activeImg");
-	};
+	// 	setImgClass("fullImg activeImg");
+	// };
 
 	// Class that resets modal classes to default when user clicks outside of image
-	const closeModal = (event) => {
-		if (
-			!event.target.id === "modalImgOne" ||
-			"modalImgTwo" ||
-			"modalImgThree"
-		) {
-			setModalOne("modalContainer fixed");
-			setModalTwo("modalContainer fixed");
-			setModalThree("modalContainer fixed");
+	// const closeModal = (event) => {
+	// 	if (
+	// 		!event.target.id === "modalImgOne" ||
+	// 		"modalImgTwo" ||
+	// 		"modalImgThree"
+	// 	) {
+	// 		setModalOne("modalContainer fixed");
+	// 		setModalTwo("modalContainer fixed");
+	// 		setModalThree("modalContainer fixed");
 
-			setImgClass("fullImg inactive");
-		} else {
-			return;
-		}
-	};
+	// 		setImgClass("fullImg inactive");
+	// 	} else {
+	// 		return;
+	// 	}
+	// };
 
 	// Event Listeners to trigger modal closure - Either clicking outside the modal, or scrolling away
-	document.addEventListener("mousedown", closeModal);
-	document.addEventListener("scroll", closeModal);
+	// document.addEventListener("mousedown", closeModal);
+	// document.addEventListener("scroll", closeModal);
 
 	// Ref for fading in text
 	const fadeItem = useRef();
@@ -90,6 +93,24 @@ const FrontPage = () => {
 		};
 	}, [fadeItem, isVisible]);
 
+	const images = [
+		{
+			src: fire,
+			modalSrc: fire,
+			alt: "Smoldering Campfire close up",
+		},
+		{
+			src: mountains,
+			modalSrc: mountains,
+			alt: "Cloudy sunset over Coachella Valley, California",
+		},
+		{
+			src: smoke,
+			modalSrc: smoke,
+			alt: "Campfire smoke caught in a sunbeam",
+		},
+	];
+
 	return (
 		<main>
 			<div className="relative">
@@ -97,7 +118,12 @@ const FrontPage = () => {
 					<h1 className="h1 fixed">
 						Carlos <br></br> Perez <br></br> Photo<br></br>Graphy
 					</h1>
-					<div className="col s6 offset-s6 absolute imgCenter">
+					<Modal
+						src={images[0].src}
+						modalSrc={images[0].modalSrc}
+						alt={images[0].alt}
+					/>
+					{/* <div className="col s6 offset-s6 absolute imgCenter">
 						<a onClick={modal} data-modal-target="#modal1" href="#modal1">
 							<img
 								id="modal1trigger"
@@ -117,10 +143,15 @@ const FrontPage = () => {
 							alt="fire"
 							loading="lazy"
 						></img>
-					</div>
+					</div> */}
 				</section>
 				<section className="row">
-					<div className="col s6 offset-s6 absolute imgCenter">
+					<Modal
+						src={images[1].src}
+						modalSrc={images[1].modalSrc}
+						alt={images[1].alt}
+					/>
+					{/* <div className="col s6 offset-s6 absolute imgCenter">
 						<a onClick={modal} data-modal-target="#modal2" href="#modal2">
 							<img
 								id="modal2trigger"
@@ -140,10 +171,15 @@ const FrontPage = () => {
 							alt="fire"
 							loading="lazy"
 						></img>
-					</div>
+					</div> */}
 				</section>
 				<section className="row">
-					<div className="col s6 offset-s6 absolute imgCenter">
+					<Modal
+						src={images[2].src}
+						modalSrc={images[2].modalSrc}
+						alt={images[2].alt}
+					/>
+					{/* <div className="col s6 offset-s6 absolute imgCenter">
 						<a onClick={modal} data-modal-target="#modal3" href="#modal3">
 							<img
 								id="modal3trigger"
@@ -163,7 +199,7 @@ const FrontPage = () => {
 							alt="fire"
 							loading="lazy"
 						></img>
-					</div>
+					</div> */}
 				</section>
 				{/* INTRO SECTION */}
 				<section className="row">

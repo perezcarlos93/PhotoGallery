@@ -68,7 +68,7 @@ const NavBar = () => {
 			<nav className="transparent z-depth-0">
 				<div className="nav-wrapper nav">
 					<a className="brand-logo logo" href="/">
-						<i class="material-icons"></i>
+						<i className="material-icons"></i>
 					</a>
 					<a
 						href="/"
@@ -78,17 +78,17 @@ const NavBar = () => {
 						<i className="material-icons">menu</i>
 					</a>
 					<ul className="right hide-on-med-and-down">
-						<li className="link blend">
+						<li className="">
 							<a className="white-text blend" href="/aboutme">
 								About Me
 							</a>
 						</li>
-						<li className="link">
+						<li className="">
 							<a className="white-text blend" href="/galleries">
 								Galleries
 							</a>
 						</li>
-						<li className="link">
+						<li className="">
 							<a className="white-text blend" href="/contactme">
 								Contact Me
 							</a>

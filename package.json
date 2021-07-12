@@ -1,5 +1,5 @@
 {
-	"name": "Portfolio-React",
+	"name": "Gallery",
 	"version": "1.0.0",
 	"description": "This project was with [Create React App](https://github.com/facebook/create-react-app).",
 	"main": "server.js",
@@ -19,13 +19,13 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/perezcarlos93/portfolio-react.git"
+		"url": "git+https://github.com/perezcarlos93/PhotoGallery"
 	},
 	"keywords": [],
 	"bugs": {
-		"url": "https://github.com/perezcarlos93/portfolio-react/issues"
+		"url": "https://github.com/perezcarlos93/PhotoGallery/issues"
 	},
-	"homepage": "https://github.com/perezcarlos93/portfolio-react#readme",
+	"homepage": "https://github.com/perezcarlos93/PhotoGallery#readme",
 	"dependencies": {
 		"@babel/core": "^7.14.5",
 		"express": "^4.17.1",
