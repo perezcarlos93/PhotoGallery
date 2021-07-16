@@ -10,8 +10,8 @@ import NavBar from "./Components/NavBar";
 // Importing Pages
 import Construction from "./pages/Construction";
 import Homepage from "./pages/Homepage";
+import Galleries from "./pages/Galleries";
 // import AboutMe from "./pages/AboutMe";
-// import Galleries from "./pages/Galleries";
 
 function App() {
 	return (
@@ -20,7 +20,7 @@ function App() {
 			<Router>
 				<Route exact path="/" component={Homepage} />
 				<Route exact path="/aboutme" component={Construction} />
-				<Route exact path="/galleries" component={Construction} />
+				<Route exact path="/galleries" component={Galleries} />
 				<Route exact path="/contactme" component={Construction} />
 			</Router>
 		</div>

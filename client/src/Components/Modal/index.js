@@ -25,8 +25,6 @@ const Modal = (props) => {
 
 	// Class that resets modal classes to default when user clicks outside of image
 	const closeModal = (event) => {
-		console.log(event);
-
 		if (event.target.id !== "modalImg") {
 			setModalClass("modalContainer fixed");
 			setImgClass("fullImg inactive");
@@ -36,18 +34,16 @@ const Modal = (props) => {
 	};
 
 	return (
-		<div>
-			<div className="col s6 offset-s6 absolute imgCenter">
-				<a onClick={modal} data-modal-target="#modal" href="#modal">
-					<img
-						id="modalTrigger"
-						className="materialboxed sqrImg"
-						src={props.src}
-						alt="fire"
-						loading="lazy"
-					></img>
-				</a>
-			</div>
+		<div className={props.classes} key={props.key}>
+			<a onClick={modal} data-modal-target="#modal" href="#modal">
+				<img
+					id="modalTrigger"
+					className="materialboxed sqrImg"
+					src={props.src}
+					alt="fire"
+					loading="lazy"
+				></img>
+			</a>
 
 			<div id="modal" className={modalClass}>
 				<img

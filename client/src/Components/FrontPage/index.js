@@ -53,19 +53,25 @@ const FrontPage = () => {
 
 	const images = [
 		{
+			key: "Photo Name",
 			src: fire,
 			modalSrc: fire,
 			alt: "Smoldering Campfire close up",
+			classes: "col s6 offset-s6 absolute imgCenter",
 		},
 		{
+			key: "Photo Name 1",
 			src: mountains,
 			modalSrc: mountains,
 			alt: "Cloudy sunset over Coachella Valley, California",
+			classes: "col s6 offset-s6 absolute imgCenter",
 		},
 		{
+			key: "Photo Name 2",
 			src: smoke,
 			modalSrc: smoke,
 			alt: "Campfire smoke caught in a sunbeam",
+			classes: "col s6 offset-s6 absolute imgCenter",
 		},
 	];
 
@@ -77,23 +83,29 @@ const FrontPage = () => {
 						Carlos <br></br> Perez <br></br> Photo<br></br>Graphy
 					</h1>
 					<Modal
+						key={images[0].key}
 						src={images[0].src}
 						modalSrc={images[0].modalSrc}
 						alt={images[0].alt}
+						classes={images[0].classes}
 					/>
 				</section>
 				<section className="row">
 					<Modal
+						key={images[1].key}
 						src={images[1].src}
 						modalSrc={images[1].modalSrc}
 						alt={images[1].alt}
+						classes={images[1].classes}
 					/>
 				</section>
 				<section className="row">
 					<Modal
+						key={images[2].key}
 						src={images[2].src}
 						modalSrc={images[2].modalSrc}
 						alt={images[2].alt}
+						classes={images[2].classes}
 					/>
 				</section>
 				{/* INTRO SECTION */}
